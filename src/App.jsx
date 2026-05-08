@@ -51,23 +51,22 @@ export default function App() {
     },
 
     {
-      name: "Paspalum Pro",
-      description:
-        "Professional-grade turf featuring enhanced drainage and realistic blade appearance for luxury landscapes.",
-    },
+  name: "Prime Fescue",
+  description:
+    "A cool-season turf blend with fine blades and excellent density for a lush, natural appearance.",
+},
 
-    {
-      name: "Fresh Cut Pro",
-      description:
-        "A vibrant freshly-cut lawn appearance with soft fibers designed for modern residential properties.",
-    },
+{
+  name: "NP45",
+  description:
+    "High-performance turf engineered for durability, improved wear tolerance, and superior recovery.",
+},
 
-    {
-      name: "Pro Cut",
-      description:
-        "Heavy-duty artificial turf built for durability, commercial applications, and long-lasting performance.",
-    },
-
+{
+  name: "EZTee Hybrid",
+  description:
+    "A hybrid turf solution designed for low maintenance, strong root development, and consistent color.",
+},
     {
       name: "Pet Turf",
       description:

@@ -11,26 +11,47 @@
 
     <script type="module" src="/src/main.jsx"></script>
 
-    <div
-      style="
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 380px;
-        height: 600px;
-        z-index: 9999;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-      "
-    >
-      <iframe
-        src="https://www.chatbase.co/chatbot-iframe/J1WUMqZmSw4ItCCQ4MYnv"
-        width="100%"
-        height="100%"
-        frameborder="0"
-        allow="microphone"
-      ></iframe>
-    </div>
+    <script>
+      (function () {
+        if (
+          !window.chatbase ||
+          window.chatbase("getState") !== "initialized"
+        ) {
+          window.chatbase = (...args) => {
+            if (!window.chatbase.q) {
+              window.chatbase.q = []
+            }
+
+            window.chatbase.q.push(args)
+          }
+
+          window.chatbase = new Proxy(window.chatbase, {
+            get(target, prop) {
+              if (prop === "q") {
+                return target.q
+              }
+
+              return (...args) => target(prop, ...args)
+            },
+          })
+        }
+
+        const onLoad = function () {
+          const script = document.createElement("script")
+
+          script.src = "https://www.chatbase.co/embed.min.js"
+          script.id = "J1WUMqZmSw4ItCCQ4MYnv"
+          script.domain = "www.chatbase.co"
+
+          document.body.appendChild(script)
+        }
+
+        if (document.readyState === "complete") {
+          onLoad()
+        } else {
+          window.addEventListener("load", onLoad)
+        }
+      })();
+    </script>
   </body>
 </html>

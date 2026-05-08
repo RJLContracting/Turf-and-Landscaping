@@ -85,55 +85,90 @@ export default function App() {
       }}
     >
       {/* NAVBAR */}
-      <nav
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "20px 50px",
-          background: "rgba(0,0,0,0.85)",
-          position: "sticky",
-          top: 0,
-          zIndex: 1000,
-          backdropFilter: "blur(10px)",
-          borderBottom: "1px solid #222",
-        }}
-      >
-        <h2
-          style={{
-            fontSize: "28px",
-            letterSpacing: "1px",
-          }}
-        >
-          Arrowsmith Turf & Landscaping
-        </h2>
+<nav
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "10px 50px",
+    background: "rgba(0,0,0,0.88)",
+    position: "sticky",
+    top: 0,
+    zIndex: 1000,
+    backdropFilter: "blur(10px)",
+    borderBottom: "1px solid #222",
+    flexWrap: "wrap",
+    gap: "20px",
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      alignItems: "center",
+      gap: "20px",
+    }}
+  >
+    <img
+      src="/logo/arrowsmithlogo.png"
+      alt="Arrowsmith Logo"
+      style={{
+        height: "125px",
+        width: "auto",
+        borderRadius: "14px",
+      }}
+    />
 
-        <div style={{ display: "flex", gap: "25px" }}>
-          <a href="#" style={{ color: "white", textDecoration: "none" }}>
-            Home
-          </a>
+    <h2
+      style={{
+        fontSize: "32px",
+        letterSpacing: "1px",
+      }}
+    >
+      Arrowsmith Turf & Landscapes
+    </h2>
+  </div>
 
-          <a href="#services" style={{ color: "white", textDecoration: "none" }}>
-            Services
-          </a>
+  <div
+    style={{
+      display: "flex",
+      gap: "25px",
+      flexWrap: "wrap",
+    }}
+  >
+    <a href="#" style={{ color: "white", textDecoration: "none" }}>
+      Home
+    </a>
 
-          <a href="#gallery" style={{ color: "white", textDecoration: "none" }}>
-            Gallery
-          </a>
+    <a
+      href="#services"
+      style={{ color: "white", textDecoration: "none" }}
+    >
+      Services
+    </a>
 
-          <a
-            href="/turf-specs/spec-sheets/index.html"
-            target="_blank"
-            style={{ color: "white", textDecoration: "none" }}
-          >
-            Specs
-          </a>
+    <a
+      href="#gallery"
+      style={{ color: "white", textDecoration: "none" }}
+    >
+      Gallery
+    </a>
 
-          <a href="#contact" style={{ color: "white", textDecoration: "none" }}>
-            Contact
-          </a>
-        </div>
-      </nav>
+    <a
+      href="/turf-specs/spec-sheets/index.html"
+      target="_blank"
+      style={{ color: "white", textDecoration: "none" }}
+    >
+      Specs
+    </a>
+
+    <a
+      href="#contact"
+      style={{ color: "white", textDecoration: "none" }}
+    >
+      Contact
+    </a>
+  </div>
+</nav>
 
       {/* HERO */}
       <section
@@ -169,15 +204,20 @@ export default function App() {
           }}
         >
           <h1
-            style={{
-              fontSize: "72px",
-              marginBottom: "20px",
-              lineHeight: "1.1",
-            }}
-          >
-            Premium Landscaping & Artificial Turf
-          </h1>
-
+  style={{
+    fontSize: "clamp(58px, 9vw, 110px)",
+    marginBottom: "20px",
+    lineHeight: "0.95",
+    fontWeight: "900",
+    textShadow: "0 4px 20px rgba(0,0,0,0.45)",
+  }}
+>
+  Premium
+  <br />
+  Artificial Turf
+  <br />
+  & Landscapes
+</h1>
           <p
             style={{
               fontSize: "24px",

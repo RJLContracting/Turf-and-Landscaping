@@ -252,6 +252,7 @@ async function fetchImages() {
           }}
         >
           <h1
+          
   style={{
     fontSize: "clamp(58px, 9vw, 110px)",
     marginBottom: "20px",
@@ -729,6 +730,46 @@ async function fetchImages() {
           </button>
         </form>
       </section>
+      <section
+  style={{
+    padding: "80px 20px",
+    background: "#050505",
+    textAlign: "center",
+    borderTop: "1px solid rgba(255,255,255,0.08)",
+  }}
+>
+  <h2
+    style={{
+      color: "#4ade80",
+      fontSize: "38px",
+      marginBottom: "20px",
+    }}
+  >
+    Contact Us
+  </h2>
+
+  <p
+    style={{
+      color: "#ccc",
+      fontSize: "20px",
+      marginBottom: "10px",
+    }}
+  >
+    Call or Text Anytime
+  </p>
+
+  <a
+    href="tel:2506077411"
+    style={{
+      color: "white",
+      fontSize: "32px",
+      fontWeight: "bold",
+      textDecoration: "none",
+    }}
+  >
+    (250) 607-7411
+  </a>
+</section>
     </div>
   )
 }

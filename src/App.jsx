@@ -1,4 +1,36 @@
-export default function App() {
+import { useEffect, useState } from "react"
+import { supabase } from "./supabase"
+export default function App() {const [galleryImages, setGalleryImages] = useState([])
+
+useEffect(() => {
+  fetchImages()
+}, [])
+
+async function fetchImages() {
+  const { data, error } = await supabase.storage
+    .from("gallery")
+    .list()
+
+  if (error) {
+    console.log(error)
+    return
+  }
+
+  const imageUrls = data.map((file) => {
+    const {
+      data: { publicUrl },
+    } = supabase.storage
+      .from("gallery")
+      .getPublicUrl(file.name)
+
+    return {
+      name: file.name,
+      url: publicUrl,
+    }
+  })
+
+  setGalleryImages(imageUrls)
+}
   const services = [
     {
       title: "Artificial Turf",
@@ -166,6 +198,23 @@ export default function App() {
     >
       Contact
     </a>
+    <a
+  href="#contact"
+  style={{ color: "white", textDecoration: "none" }}
+>
+  Contact
+</a>
+
+<a
+  href="/admin"
+  style={{
+    color: "#4ade80",
+    textDecoration: "none",
+    fontWeight: "bold",
+  }}
+>
+  Admin Login
+</a>
   </div>
 </nav>
 
@@ -404,6 +453,28 @@ export default function App() {
           ))}
         </div>
       </section>
+      {galleryImages.map((image) => (
+<div
+  key={image.name}
+  style={{
+    height: "440px",
+    borderRadius: "28px",
+    overflow: "hidden",
+    boxShadow: "0 15px 40px rgba(0,0,0,0.5)",
+  }}
+>
+  <img
+    src={image.url}
+    alt=""
+    style={{
+      width: "100%",
+      height: "100%",
+      objectFit: "contain",
+      display: "block",
+    }}
+  />
+</div>
+))}
 
       {/* AI SECTION */}
       <section

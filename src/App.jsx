@@ -191,13 +191,6 @@ async function fetchImages() {
     >
       Specs
     </a>
-
-    <a
-      href="#contact"
-      style={{ color: "white", textDecoration: "none" }}
-    >
-      Contact
-    </a>
     <a
   href="#contact"
   style={{ color: "white", textDecoration: "none" }}

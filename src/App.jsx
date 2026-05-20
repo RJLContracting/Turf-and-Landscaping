@@ -447,28 +447,18 @@ async function fetchImages() {
           ))}
         </div>
       </section>
-      {galleryImages.map((image) => (
-<div
-  key={image.name}
-  style={{
-    height: "440px",
-    borderRadius: "28px",
-    overflow: "hidden",
-    boxShadow: "0 15px 40px rgba(0,0,0,0.5)",
-  }}
->
-  <img
-    src={image.url}
-    alt=""
-    style={{
-      width: "100%",
-      height: "100%",
-      objectFit: "contain",
-      display: "block",
-    }}
-  />
+    <div className="gallery-grid">
+  {galleryImages.map((image, index) => (
+    <div className="gallery-card" key={index}>
+
+      <img
+        src={image.url}
+        alt=""
+      />
+
+    </div>
+  ))}
 </div>
-))}
 
       {/* AI SECTION */}
       <section
